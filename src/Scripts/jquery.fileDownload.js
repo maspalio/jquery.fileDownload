@@ -1,5 +1,5 @@
 /*
-* jQuery File Download Plugin v1.4.3 
+* jQuery File Download Plugin v1.4.3.1-AMD
 *
 * http://www.johnculviner.com
 *
@@ -12,6 +12,13 @@
 * You must also write a cookie in conjunction with using this plugin as mentioned in the orignal post:
 * http://johnculviner.com/jquery-file-download-plugin-for-ajax-like-feature-rich-file-downloads/
 * !!!!NOTE!!!!
+*/
+
+/*
+* !!!!GOTCHA!!!!
+* This is a fork from John Culviner (johnculviner) v1.4.3 (most likely commit a49f386272612fdbb33fc9c845bccfd76fb68446).
+* This fork adds AMD support as per George Mauer (togakangaroo) commit 8703d28bd86be4831adf334d24eb83e164e6edb4.
+* !!!!GOTCHA!!!!
 */
 
 (function (root, factory) {
@@ -127,7 +134,7 @@ return function fileDownload(fileUrl, options) {
             //
             //if specified it will be used when attempting to clear the above name value pair
             //useful for when downloads are being served on a subdomain (e.g. downloads.example.com)
-            //	
+            //
             cookieDomain: null,
 
             //
@@ -142,7 +149,7 @@ return function fileDownload(fileUrl, options) {
             //It is recommended that on the server, htmlentity decoding is done irrespective.
             //
             encodeHTMLEntities: true
-            
+
         }, options);
 
         var deferred = new $.Deferred();
@@ -226,7 +233,7 @@ return function fileDownload(fileUrl, options) {
                 }
 
                 settings.failCallback(responseHtml, url);
-                
+
                 deferred.reject(responseHtml, url);
             }
         };
@@ -382,7 +389,7 @@ return function fileDownload(fileUrl, options) {
                                 } else {
                                     throw e;
                                 }
-                            } 
+                            }
                         }
 
                         if (isFailure) {
@@ -391,7 +398,7 @@ return function fileDownload(fileUrl, options) {
                                 internalCallbacks.onFail(formDoc.body.innerHTML, fileUrl);
                                 cleanUp(true);
                             }, 100);
-                            
+
                             return;
                         }
                     }
@@ -440,7 +447,7 @@ return function fileDownload(fileUrl, options) {
                         }
                     }
                 }
-                
+
                 //iframe cleanup appears to randomly cause the download to fail
                 //not doing it seems better than failure...
                 //if ($iframe) {

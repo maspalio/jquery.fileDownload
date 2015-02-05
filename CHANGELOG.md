@@ -1,5 +1,12 @@
 <h2>jQuery File Download Changelog</h2>
 
+<h4>05/02/2014 - 1.4.3.1-AMD</h4>
+<ul>
+<li>Added AMD support to 1.4.3 (most likely commit a49f386) as per togakangaroo commit 8703d28 (maspalio).</li>
+</ul>
+
+<!-- missing 1.4.2 and 1.4.3 changes -->s
+
 <h4>6/01/2013 - 1.4.1</h4>
 <ul>
 	<li>Merged pull fixing constant location. Thanks Djemo!</li>
