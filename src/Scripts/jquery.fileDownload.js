@@ -14,7 +14,20 @@
 * !!!!NOTE!!!!
 */
 
-(function($, window){
+(function (root, factory) {
+    if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define(['jquery'], factory);
+    } else if (typeof exports === 'object') {
+        // Node. Does not work with strict CommonJS, but
+        // only CommonJS-like enviroments that support module.exports,
+        // like Node.
+        module.exports = { fileDownload: factory(require('jquery')) };
+    } else {
+        // Browser globals (root is window)
+        root.jQuery.extend({ fileDownload: factory(root.jQuery) });
+    }
+}(this, function ($) {
 	// i'll just put them here to get evaluated on script load
 	var htmlSpecialCharsRegEx = /[<>&\r\n"']/gm;
 	var htmlSpecialCharsPlaceHolders = {
@@ -27,11 +40,9 @@
 				"'": '#39;' /*single quotes just to be safe, IE8 doesn't support &apos;, so use &#39; instead */
 	};
 
-$.extend({
-    //
     //$.fileDownload('/path/to/url/', options)
     //  see directly below for possible 'options'
-    fileDownload: function (fileUrl, options) {
+return function fileDownload(fileUrl, options) {
 
         //provide some reasonable defaults to any unspecified options below
         var settings = $.extend({
@@ -451,7 +462,5 @@ $.extend({
             $iframe.remove();
         };
         return promise;
-    }
-});
-
-})(jQuery, this);
+};
+}));
