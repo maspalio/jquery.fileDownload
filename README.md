@@ -3,6 +3,12 @@ jQuery File Download is a cross server platform compatible jQuery plugin that al
 Source here:
 https://github.com/johnculviner/jquery.fileDownload/blob/master/src/Scripts/jquery.fileDownload.js
 
+### Gotcha!
+
+This is a fork from John Culviner (johnculviner) v1.4.3 (most likely commit a49f386272612fdbb33fc9c845bccfd76fb68446).
+
+This fork adds AMD support as per George Mauer (togakangaroo) commit 8703d28bd86be4831adf334d24eb83e164e6edb4.
+
 ### Requirements
 * jQuery 1.6+
 
@@ -10,7 +16,7 @@ https://github.com/johnculviner/jquery.fileDownload/blob/master/src/Scripts/jque
 * Internet Explorer 6+ - Works fine for standard use cases except in < IE9 JavaScript access to the *failed* response HTML doesn't (and can't) work reliably due to browser iframe constraints.
 * Firefox 11+ - reasonably sure it will work on earlier versions
 * Chrome 17+ - reasonably sure it will work on earlier versions
-* iOS 5.0+ - reasonably sure it will work on earlier versions 
+* iOS 5.0+ - reasonably sure it will work on earlier versions
 * Android 4.0+ - non-GET requests do not work due to a long-standing [bug](http://code.google.com/p/android/issues/detail?id=1780) in the Android browser. This is handled 'gracefully' with a message to the user.
 
 ###Demo (of this exact source):
@@ -33,4 +39,3 @@ https://github.com/johnculviner/jquery.fileDownload/blob/master/src/Scripts/jque
 
 The [`jquery_file_download-rails`](https://github.com/rcook/jquery_file_download-rails)
 gem integrates `jquery.fileDownload.js` into the Rails 3.1+ asset pipeline.
-
